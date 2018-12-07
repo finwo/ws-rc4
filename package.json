@@ -1,6 +1,6 @@
 {
   "name": "ws-rc4",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "RC4-encrypted websocket library",
   "main": "dist/node.js",
   "browser": "dist/browser.js",
