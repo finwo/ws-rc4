@@ -1,0 +1,19 @@
+{
+  "name": "ws-rc4",
+  "version": "0.0.1",
+  "description": "RC4-encrypted websocket library",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "NODE_ENV=babel jest --detectOpenHandles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/finwo/ws-rc4.git"
+  },
+  "author": "Robin Bron <robin@finwo.nl>",
+  "license": "Ratus Unilicense 1.0",
+  "bugs": {
+    "url": "https://gitlab.com/finwo/ws-rc4/issues"
+  },
+  "homepage": "https://gitlab.com/finwo/ws-rc4#readme"
+}
