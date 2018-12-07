@@ -1,36 +1,36 @@
 {
-  "name"            : "ws-rc4",
-  "version"         : "0.0.1",
-  "description"     : "RC4-encrypted websocket library",
-  "main"            : "dist/node.js",
-  "browser"         : "dist/browser.js",
-  "scripts"         : {
-    "test"           : "NODE_ENV=babel jest --detectOpenHandles",
-    "prepublishOnly" : "make"
+  "name": "ws-rc4",
+  "version": "0.1.0",
+  "description": "RC4-encrypted websocket library",
+  "main": "dist/node.js",
+  "browser": "dist/browser.js",
+  "scripts": {
+    "test": "NODE_ENV=babel jest --detectOpenHandles",
+    "prepublishOnly": "make"
   },
-  "repository"      : {
-    "type" : "git",
-    "url"  : "git+https://gitlab.com/finwo/ws-rc4.git"
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/finwo/ws-rc4.git"
   },
-  "author"          : "Robin Bron <robin@finwo.nl>",
-  "license"         : "Ratus Unilicense 1.0",
-  "bugs"            : {
-    "url" : "https://gitlab.com/finwo/ws-rc4/issues"
+  "author": "Robin Bron <robin@finwo.nl>",
+  "license": "Ratus Unilicense 1.0",
+  "bugs": {
+    "url": "https://gitlab.com/finwo/ws-rc4/issues"
   },
-  "homepage"        : "https://gitlab.com/finwo/ws-rc4#readme",
-  "devDependencies" : {
-    "babel-jest"                              : "^23.6.0",
-    "babel-plugin-add-module-exports"         : "^1.0.0",
-    "babel-plugin-transform-class-properties" : "^6.24.1",
-    "babel-preset-env"                        : "^1.7.0",
-    "expect"                                  : "^23.6.0",
-    "jest"                                    : "^23.6.0",
-    "jest-isa"                                : "0.0.4",
-    "uglify-es"                               : "^3.3.9"
+  "homepage": "https://gitlab.com/finwo/ws-rc4#readme",
+  "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "expect": "^23.6.0",
+    "jest": "^23.6.0",
+    "jest-isa": "0.0.4",
+    "uglify-es": "^3.3.9"
   },
-  "dependencies"    : {
-    "cws"          : "^1.0.0",
-    "rc4-crypt"    : "^1.0.0",
-    "ws-transform" : "^1.0.0"
+  "dependencies": {
+    "cws": "^1.0.0",
+    "rc4-crypt": "^1.0.0",
+    "ws-transform": "^1.0.0"
   }
 }
