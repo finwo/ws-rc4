@@ -1,4 +1,4 @@
-// Build by finwo @ vr 7 dec 2018 11:14:42 CET
+// Build by finwo @ vr 7 dec 2018 11:56:02 CET
 (function (factory) {
 
   // Handle RequireJS
@@ -250,6 +250,7 @@ module.exports = function (remote, {egress = direct, ingress = direct, convert =
   );
 
 })(function(rc4,WS,transform) {
+return null ||
 function (key) {
 
   // Creating an encrypted client
@@ -292,4 +293,5 @@ function (key) {
   // Return the encrypted socket lib
   return sws;
 }
+  ;
 });

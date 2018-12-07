@@ -52,5 +52,7 @@
   );
 
 })(function(rc4,WS,transform) {
-return #include core.js
+return null ||
+#include core.js
+  ;
 });

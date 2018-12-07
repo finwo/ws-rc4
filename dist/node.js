@@ -1,6 +1,6 @@
-// Build by finwo @ vr 7 dec 2018 11:14:42 CET
+// Build by finwo @ vr 7 dec 2018 11:56:02 CET
 const rc4       = require('rc4-crypt'),
-      transform = require('ws-transform');
+      transform = require('ws-transform'),
       WS        = require('cws');
 
 module.exports =
