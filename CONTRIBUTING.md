@@ -57,5 +57,5 @@ The JavaScript source code in this project must adhere to the rules as described
 [gitter/finwo]: https://gitter.im/finwo
 [issues]: https://gitlab.com/finwo/ws-rc4/issues
 [issues/new]: https://gitlab.com/finwo/ws-rc4/issues/new
-[merge_requests/new]: https://gitlab.com/finwo/rc4-crypt/merge_requests/new
+[merge_requests/new]: https://gitlab.com/finwo/ws-rc4/merge_requests/new
 [semver]: http://semver.org
