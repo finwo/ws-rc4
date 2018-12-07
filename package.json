@@ -31,6 +31,6 @@
   "dependencies": {
     "cws": "^1.0.0",
     "rc4-crypt": "^1.0.0",
-    "ws-transform": "^1.0.0"
+    "ws-transform": "^1.0.1"
   }
 }
