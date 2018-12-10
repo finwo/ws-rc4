@@ -1,4 +1,4 @@
-// Build by finwo @ vr 7 dec 2018 11:56:02 CET
+// Build by finwo @ ma 10 dec 2018 10:31:17 CET
 (function (factory) {
 
   // Handle RequireJS
@@ -195,8 +195,20 @@ module.exports = function (remote, {egress = direct, ingress = direct, convert =
   const local = Object.create(remote);
 
   // Intercept egress
+  // Buffed, in case you try to send before connected
+  let queue = [];
   local.send = async function( chunk ) {
-    return remote.send(await egress(chunk));
+    if (remote.readyState > 1) return;
+    queue.push(await egress(chunk));
+    let current = false;
+    try {
+      while(queue.length) {
+        current = queue.shift();
+        remote.send(current);
+      }
+    } catch(e) {
+      if (current) queue.unshift(current);
+    }
   };
 
   // Intercept adding events
@@ -251,7 +263,10 @@ module.exports = function (remote, {egress = direct, ingress = direct, convert =
 
 })(function(rc4,WS,transform) {
 return null ||
-function (key) {
+function (key, opts) {
+  opts = Object.assign({
+    onerror: function(){},
+  },opts||{});
 
   // Creating an encrypted client
   function sws(...args) {
@@ -267,13 +282,32 @@ function (key) {
     let server = new WS.Server(...args),
         local  = Object.create(server);
 
+    // Log server errors
+    server.on('error', function(...args) {
+      (function handle(fn) {
+        if (Array.isArray(fn)) return fn.map(handle);
+        if ('function' !== typeof fn) return;
+        fn('server',...args);
+      })(opts.onerror);
+    });
+
     // Intercept event registering
     local.on = function (type, listener) {
+      // Not connection = not interested
       if ('connection' !== type) {
         server.on(type, listener);
         return local;
       }
       server.on('connection', function (socket, req) {
+
+        // Log socket errors
+        socket.on('error', function(...args) {
+          if (Array.isArray(fn)) return fn.map(handle);
+          if ('function' !== typeof fn) return;
+          fn('socket',...args);
+        });
+
+        // Return wrapped socket
         listener(transform(socket, {
           egress : rc4(key),
           ingress: rc4(key),

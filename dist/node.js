@@ -1,10 +1,13 @@
-// Build by finwo @ vr 7 dec 2018 11:56:02 CET
+// Build by finwo @ ma 10 dec 2018 10:31:17 CET
 const rc4       = require('rc4-crypt'),
       transform = require('ws-transform'),
       WS        = require('cws');
 
 module.exports =
-function (key) {
+function (key, opts) {
+  opts = Object.assign({
+    onerror: function(){},
+  },opts||{});
 
   // Creating an encrypted client
   function sws(...args) {
@@ -20,13 +23,32 @@ function (key) {
     let server = new WS.Server(...args),
         local  = Object.create(server);
 
+    // Log server errors
+    server.on('error', function(...args) {
+      (function handle(fn) {
+        if (Array.isArray(fn)) return fn.map(handle);
+        if ('function' !== typeof fn) return;
+        fn('server',...args);
+      })(opts.onerror);
+    });
+
     // Intercept event registering
     local.on = function (type, listener) {
+      // Not connection = not interested
       if ('connection' !== type) {
         server.on(type, listener);
         return local;
       }
       server.on('connection', function (socket, req) {
+
+        // Log socket errors
+        socket.on('error', function(...args) {
+          if (Array.isArray(fn)) return fn.map(handle);
+          if ('function' !== typeof fn) return;
+          fn('socket',...args);
+        });
+
+        // Return wrapped socket
         listener(transform(socket, {
           egress : rc4(key),
           ingress: rc4(key),
