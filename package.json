@@ -20,7 +20,7 @@
   "homepage": "https://gitlab.com/finwo/ws-rc4#readme",
   "devDependencies": {
     "babel-jest": "^23.6.0",
-    "babel-plugin-add-module-exports": "^1.0.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "expect": "^23.6.0",
@@ -29,7 +29,7 @@
     "uglify-es": "^3.3.9"
   },
   "dependencies": {
-    "cws": "^1.0.0",
+    "cws": "^1.2.4",
     "rc4-crypt": "^1.0.0",
     "ws-transform": "^1.0.1"
   }
