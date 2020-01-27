@@ -19,7 +19,7 @@
   },
   "homepage": "https://gitlab.com/finwo/ws-rc4#readme",
   "devDependencies": {
-    "babel-jest": "^24.9.0",
+    "babel-jest": "^25.1.0",
     "babel-plugin-add-module-exports": "^1.0.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
