@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/finwo/ws-rc4.git"
+    "url": "git+https://github.com/finwo/ws-rc4"
   },
   "author": "Robin Bron <robin@finwo.nl>",
   "license": "Ratus Unilicense 1.0",
   "bugs": {
-    "url": "https://gitlab.com/finwo/ws-rc4/issues"
+    "url": "https://github.com/finwo/ws-rc4/issues"
   },
-  "homepage": "https://gitlab.com/finwo/ws-rc4#readme",
+  "homepage": "https://github.com/finwo/ws-rc4#readme",
   "devDependencies": {
     "babel-jest": "^26.0.1",
     "babel-plugin-add-module-exports": "^1.0.2",
